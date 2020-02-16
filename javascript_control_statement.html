@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+   <html>
+
+      <head>
+	<title>Sales Report</title>
+	
+	<style type="text/css"> 	
+
+	table   { width: 300px;
+                border-collapse:collapse; 
+                background-color: lightblue; }
+	table, td, th { border: 1px solid black; 
+                padding: 4px; }
+	td            { width: 50%; }
+	th            { text-align: center; 
+                color: white;
+                background-color: darkblue; }
+tr.oddrow     { background-color: white; }
+
+		table, table th, table td {
+			text-align: center;
+			padding: 5px;
+		}
+		
+	</style>
+	
+	<script type = "text/javascript">
+		
+		var Product;
+		var Prod;
+		
+		var Quantity;
+		var Qty;
+
+		var Price = 0;
+
+		var Total = 0;
+		
+		var Quantity1 = 0;
+		var Price1 = 8.00;
+		var Total1 = 0;
+
+		var Quantity2 = 0; 
+		var Price2 = 4.50;
+		var Total2 = 0; 
+
+		var Quantity3 = 0; 
+		var Price3 = 1.80;
+		var Total3 = 0; 
+
+		var Quantity4 = 0;
+		var Price4 = 3.50;
+		var Total4 = 0;	
+
+		do {
+		
+		Product = window.prompt("Enter Product Number (1-4).\nEnter 0 to Obtain the Result after 4th Sale.");
+		Prod = parseInt(Product);	
+		
+		if ( Prod == 0 )
+			break;
+		
+		Quantity = window.prompt("Enter Corresponding Quantity Sold:");
+		Qty = parseInt(Quantity);
+
+		switch (Prod)
+		{
+			case 1:
+				Quantity1 += Qty;
+				 Price =+ Price1;				
+				Total1 += Price1 * Qty;
+				break;
+			case 2:
+				Quantity2 += Qty;
+				Price =+ Price2;
+				Total2 += Price2 * Qty;
+				break;
+			case 3:
+				Quantity3 += Qty;
+				Price =+ Price3;
+				Total3 += Price3 * Qty;
+				break;
+			case 4:
+				Quantity4 += Qty;
+				Price =+ Price4;
+				Total4 += Price4 * Qty;
+				break;
+			
+		}
+	    
+		Total += Price * Qty;
+
+	} while ( Prod != 0 )	
+		document.write( "<table border=\"1\">"); 
+		document.write( "<caption><h2>Last Week Sales Report</h2></caption>" );
+		document.write( "<thead><tr><th>Product</th><th>Price (€)</th><th>Quantity</th><th>Total</th></tr></thead>" );
+		document.write( "<tfoot><tr><th colspan=\"3\">Total:</th><th>€" + Total.toFixed(2) + "</th></tr></tfoot>");
+		document.write( "<tbody>" );
+		document.write( "<tr><td>1</td><td>8.00</td><td>" + Quantity1 + "</td><td>€" + Total1.toFixed(2) + "</td></tr>" );
+		document.write( "<tr><td>2</td><td>4.50</td><td>" + Quantity2 + "</td><td>€" + Total2.toFixed(2) + "</td></tr>" );
+		document.write( "<tr><td>3</td><td>1.80</td><td>" + Quantity3 + "</td><td>€" + Total3.toFixed(2) + "</td></tr>" );
+		document.write( "<tr><td>4</td><td>3.50</td><td>" + Quantity4 + "</td><td>€" + Total4.toFixed(2) + "</td></tr>" );
+		document.write( "</tbody>" );
+		document.write( "</table>" );
+		document.write( "<br />" );	
+	</script>	
+       </head>
+     <body> </body>
+</html>
+
+
+		
